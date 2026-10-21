@@ -1,1 +1,61 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="An animated beginner-friendly AWS VPC story"><title>VPC Visual — Ravi's Cloud Society</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"></head><body><header><div><strong>VPC Visual</strong><span>Ravi's cloud society · #Buildwithvinit</span></div><button id="theme" type="button" aria-label="Toggle light and dark mode">Toggle theme</button></header><main><aside><h1>Build the network, one step at a time.</h1><p>Follow Ravi as his shop grows into a secure cloud society.</p><nav id="steps" aria-label="VPC lesson steps"></nav><div class="actions"><button id="play">Auto-play · 5s</button><button id="reset">Reset</button></div><section class="legend"><h2>Moving objects</h2><p>✉️ Visitor request · 💾 Data · 🔁 Replication · 📦 Update · 👿 Intruder · 🔒 VPN · 🤝 Peering</p></section></aside><section class="main"><div class="stage-scroll"><div id="stage" role="img" aria-label="Animated diagram of an AWS VPC"></div></div><article id="caption" aria-live="polite"></article></section></main><script src="js/app.js" defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>vpc-visual: an AWS VPC explained as a gated housing society</title>
+  <meta name="description" content="An animated, beginner-friendly diagram that explains an AWS VPC step by step, in plain language. By cloud-messenger (cloudmessenger.in). #buildwithcloud-messenger">
+  <meta name="keywords" content="AWS, VPC, subnet, internet gateway, NAT, security group, NACL, VPN, VPC peering, cloudmessenger.in, buildwithcloud-messenger">
+  <meta name="author" content="cloud-messenger">
+  <meta property="og:title" content="vpc-visual: an AWS VPC explained as a gated housing society">
+  <meta property="og:description" content="Nine animated steps, zero jargon. #buildwithcloud-messenger | cloudmessenger.in">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <header class="brand">
+        <h1>vpc-visual</h1>
+        <p>An AWS VPC, explained as a gated housing society.</p>
+      </header>
+
+      <nav class="steps" id="steps" aria-label="The 9 steps"></nav>
+
+      <div class="controls">
+        <button type="button" class="btn primary" id="btn-auto" aria-pressed="false">Auto-play</button>
+        <button type="button" class="btn" id="btn-reset">Reset</button>
+      </div>
+
+      <section class="legend" aria-labelledby="legend-h">
+        <h2 id="legend-h">What is moving?</h2>
+        <ul id="legend"></ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <div class="stage" id="stage"></div>
+
+      <article class="caption" id="caption" aria-live="polite">
+        <h2 id="cap-title"></h2>
+        <div class="cap-grid">
+          <section class="part"><h3>In plain words</h3><p id="cap-plain"></p></section>
+          <section class="part"><h3>Technical name</h3><p id="cap-tech"></p></section>
+          <section class="part"><h3>Watch the picture</h3><p id="cap-watch"></p></section>
+        </div>
+      </article>
+
+      <footer class="foot">
+        <span>Made by <strong>cloud-messenger</strong></span>
+        <a href="https://cloudmessenger.in" target="_blank" rel="noopener">cloudmessenger.in</a>
+        <span class="hash">#buildwithcloud-messenger</span>
+      </footer>
+      <noscript><p class="foot">This diagram needs JavaScript to draw and animate.</p></noscript>
+    </main>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

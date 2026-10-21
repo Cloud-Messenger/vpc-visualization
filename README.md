@@ -1,68 +1,96 @@
-# VPC Visual
+# vpc-visual
 
-A no-build, dependency-free animated SVG guide to AWS networking. Ravi, a shop owner, explains his VPC as a gated housing society. Each step builds on the previous step. Built for beginners, accessible controls, and GitHub Pages.
+An animated, beginner-friendly diagram that explains an **AWS VPC** step by step, in plain language a non-IT person can follow.
 
-## Moving objects
+The VPC is told as a **gated housing society** owned by a shop owner called *cloud-messenger*. Every technical term gets an everyday analogy.
+
+By **cloud-messenger** | [cloudmessenger.in](https://cloudmessenger.in) | **#buildwithcloud-messenger**
+
+No build step. No dependencies. Plain HTML, CSS and JavaScript with one inline SVG.
+
+## The analogies
+
+| Technical term | In the housing society |
+|---|---|
+| VPC | Fenced plot of land |
+| Availability Zone | A separate building |
+| Subnet | Lobby (public) / private flats |
+| Internet Gateway | Main gate |
+| NAT Gateway | Delivery counter |
+| Security Group | Door guard |
+| NACL | Gate guard |
+| Load Balancer | Receptionist |
+| VPN | Secret tunnel |
+| VPC Peering | Private road |
+
+## The moving objects
 
 | Packet | Meaning |
 |---|---|
-| ✉️ | Visitor request |
-| 💾 | Data travelling between servers |
-| 🔁 | Database replication |
-| 📦 | Software update leaving via NAT |
-| 👿 | Intruder blocked at a subnet boundary |
-| 🔒 | Office VPN traffic |
-| 🤝 | Partner VPC peering traffic |
+| ✉️ Envelope | A visitor's request |
+| 💾 Floppy disk | Data |
+| 🔁 Repeat arrows | Database replication between zones |
+| 📦 Package | A software update |
+| 👿 Devil | An intruder |
+| 🔒 Lock | Office VPN traffic |
+| 🤝 Handshake | Partner VPC peering |
 
-## Nine steps
+## The 9 steps
 
-1. VPC — fenced plot inside an AWS region.
-2. Availability Zones — two separate buildings.
-3. Subnets — public lobbies and private staff rooms.
-4. Internet Gateway — main gate and route-table signboard.
-5. Load Balancer — receptionist sharing requests across web servers.
-6. App servers and database — shop staff, records and a live copy.
-7. NAT Gateway — outbound delivery counter for software updates.
-8. Security Groups and NACLs — door and subnet guards.
-9. VPN and VPC Peering — encrypted office tunnel and private partner road.
+Clicking a step shows that step **and everything before it**. Clicking an earlier step goes back.
+
+1. **The plot of land (VPC):** AWS Cloud region box and the VPC box (10.0.0.0/16).
+2. **Two buildings (Availability Zones):** Zone A and Zone B.
+3. **Lobby and flats (Subnets):** public (gold) and private (purple) in each zone.
+4. **The main gate (Internet Gateway):** Internet, Visitors, a route table label and the first envelope.
+5. **The receptionist (Load Balancer):** web servers in both zones; requests are shared.
+6. **Back office and vault (App + Database):** data flows web, app, database, with a live copy in zone B.
+7. **Delivery counter (NAT Gateway):** a software update leaves via NAT and the main gate.
+8. **Guards (Security):** SG guard tags, NACL tags and an intruder who gets blocked.
+9. **Tunnel and road (VPN + Peering):** an office reaches the private subnet; a partner VPC connects by peering.
+
+The sidebar also has **Auto-play** (advances every 5 seconds) and **Reset**.
 
 ## Run locally
 
-From inside `vpc-visual/`:
-
 ```bash
+cd vpc-visual
 python3 -m http.server 8000
 ```
 
-Visit http://localhost:8000 in your browser. You can also open `index.html` directly.
+Open <http://localhost:8000>. (Opening `index.html` directly also works, but a local server matches GitHub Pages.)
 
-## Publish with GitHub Pages
+## Host on GitHub Pages
 
-1. Create a public GitHub repository named `vpc-visual`.
-2. Upload the **contents** of the `vpc-visual` folder to the repository root, including `.nojekyll`.
-3. Commit the files to the `main` branch.
-4. Open **Settings > Pages**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select **main** and **/ (root)**, then **Save**.
-7. Wait for deployment and visit `https://YOUR-USERNAME.github.io/vpc-visual/`.
+1. Create a new repository on GitHub (for example `vpc-visual`) and upload the **contents** of this folder so that `index.html` sits at the repository root.
+2. Go to **Settings > Pages**.
+3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+4. Choose branch **main** and folder **/ (root)**, then click **Save**.
+5. Wait a minute. Your site appears at `https://<your-username>.github.io/vpc-visual/`.
 
-## Structure
+The empty `.nojekyll` file tells GitHub Pages to serve the files exactly as they are.
 
-```text
+## Project structure
+
+```
 vpc-visual/
-├── index.html
-├── css/style.css
-├── js/app.js
-├── .nojekyll
-├── LICENSE
-└── README.md
+  index.html     page structure only
+  css/style.css  page theme (light/dark) and diagram styling
+  js/app.js      builds the SVG, holds step data and caption text
+  .nojekyll      serve files as-is on GitHub Pages
+  LICENSE        open-pathshala License
+  README.md      this file
 ```
 
-## Customize
+## Customise
 
-- Change titles, subtitles, analogies and captions in the `lessons` array in `js/app.js`.
-- Change SVG node colours in the `render()` function of `js/app.js`.
-- Change page theme colours in CSS custom properties at the top of `css/style.css`.
-- Replace `YOUR NAME` in the MIT LICENSE.
+- **Text:** open `js/app.js` and edit the `STEPS` list (title, subtitle, plain words, technical name, watch-the-picture).
+- **Owner name, website and hashtag:** edit `CONFIG` at the top of `js/app.js` (`owner`, `site`, `hashtag`, `autoplayMs`). The footer in `index.html`, the `<meta>` tags and `LICENSE` also carry the same details, so update those too.
+- **Page colours:** change the variables in `:root` (light) and the `prefers-color-scheme: dark` block at the top of `css/style.css`.
+- **Diagram colours:** in `css/style.css`, see the `.zone`, `.bx`, `.tag` and `.wire` rules. Blue = cloud/zones, teal = VPC, gold = public, purple = private, red = security, green = office link.
+- **Font:** Bricolage Grotesque from Google Fonts, with system fallbacks, set on `body`.
+- **Accessibility:** buttons have visible focus outlines and `prefers-reduced-motion` freezes the animation.
 
-Note: The network drawing is conceptual, not a production-ready reference architecture. Real AWS routing, subnet placement, security and database replication require additional configuration.
+---
+
+Made with care by cloud-messenger | cloudmessenger.in | #buildwithcloud-messenger
