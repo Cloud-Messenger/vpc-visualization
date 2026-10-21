@@ -269,7 +269,7 @@ Explore the code, experiment with the visualization, suggest improvements, and s
 Made with care by **cloud-messenger™**
 
 🌐 [cloudmessenger.in](https://cloudmessenger.ai)  
-💼 [LinkedIn — Ulhas Narwade](https://www.linkedin.com/in/ulhas-narwade-aws-certified-devops/)  
+💼 [LinkedIn — Cloud-Messenger](https://www.linkedin.com/in/cloud-messenger/)  
 🐙 [GitHub — Cloud-Messenger](https://github.com/Cloud-Messenger)
 
 *Making cloud and DevOps concepts visual, practical, and accessible to everyone.*
