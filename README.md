@@ -90,7 +90,37 @@ vpc-visual/
 - **Diagram colours:** in `css/style.css`, see the `.zone`, `.bx`, `.tag` and `.wire` rules. Blue = cloud/zones, teal = VPC, gold = public, purple = private, red = security, green = office link.
 - **Font:** Bricolage Grotesque from Google Fonts, with system fallbacks, set on `body`.
 - **Accessibility:** buttons have visible focus outlines and `prefers-reduced-motion` freezes the animation.
+. Beginner-Friendly Learning Experience
 
+Every step includes a caption card with two explanations:
+
+Simple Explanation: Understand the concept in beginner-friendly language.
+
+Technical Explanation: Explore the underlying concepts and terminology relevant to AWS Cloud Support interviews.
+
+The README also documents EC2 deployment commands, file uploads using scp, common troubleshooting steps, and instructions for publishing the project using GitHub Pages.
+
+☁️with Ulhas Narwade
+
+GitHub: Explore Cloud-Messenger projects
+
+License: Openपाठशाला -License — Cloud-Messenger
+
+🎯 Branding & Open-Source License
+
+The project includes Cloud-Messenger branding and links to the creator’s professional profiles.
+
+Branding: #buildwithCloud-Messenger
+
+LinkedIn: Connect 
+
+This project transforms a traditional VPC setup tutorial into a visual, step-by-step learning experience. It helps learners connect Linux commands, AWS networking, EC2 deployment, HTTP request handling, and web server troubleshooting.
+
+Learn the architecture. Visualize the workflow. Practice the commands. Troubleshoot like a DevOps Engineer.
+
+☁️ #buildwithCloud-Messenger
+
+Learn • Build • Visualize • Troubleshoot • Grow
 ---
 
 Made with care by cloud-messenger | cloudmessenger.in | #buildwithcloud-messenger
